@@ -13,7 +13,7 @@ html(lang='ko_kr')
     link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
     link(rel='stylesheet', href='/bootstrap/css/bootstrap-theme.min.css')
     // Custom styles for this template 
-    link(href='/bootstrap/css/theme.css', rel='stylesheet')
+    link(href='/bootstrap/css/dashboard.css', rel='stylesheet')
 
   body(role='document')
     // Fixed navbar
@@ -33,10 +33,11 @@ html(lang='ko_kr')
                   li
                       a(href='#') Menu2
     div.container-fluid 
-      div.col-sm-3.col-md-2.sidebar
-        ul.nav.nav-sidebar  
-          li.active
-            a(href='#') Menu1
-          li
-            a(href='#') Menu2
-      block content
+      div.row
+        div.col-sm-3.col-md-2.sidebar
+          ul.nav.nav-sidebar  
+            li.active
+              a(href='#') Menu1
+            li
+              a(href='#') Menu2
+        block content
