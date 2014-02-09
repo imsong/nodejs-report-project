@@ -1,0 +1,42 @@
+doctype html
+html(lang='ko_kr')
+  head
+    meta(charset='utf-8')
+
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Theme Template for Bootstrap
+
+    // Bootstrap core CSS 
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap-theme.min.css')
+    // Custom styles for this template 
+    link(href='/bootstrap/css/theme.css', rel='stylesheet')
+
+  body(role='document')
+    // Fixed navbar
+    div(role='navigation').navbar.navbar-inverse.navbar-fixed-top
+      div.container
+          div.navbar-header
+              button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                  span.sr-only Toggle navigation
+                  span.icon-bar 
+                  span.icon-bar 
+                  span.icon-bar 
+              a.navbar-brand(href='#') Report Template
+          div.navbar-collapse.collapse
+              ul.nav.navbar-nav
+                  li.active
+                      a(href='#') Menu1
+                  li
+                      a(href='#') Menu2
+    div.container-fluid 
+      div.col-sm-3.col-md-2.sidebar
+        ul.nav.nav-sidebar  
+          li.active
+            a(href='#') Menu1
+          li
+            a(href='#') Menu2
+      block content
