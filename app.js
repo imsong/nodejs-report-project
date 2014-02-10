@@ -31,15 +31,14 @@ if ('development' == app.get('env')) {
 
 //connect to mysql database
 var connection = mysql.createConnection({
-  host : 'localhost',
+  host : '127.0.0.1',
   user : 'root',
-  password : 'root',
+  password : '',
   database : 'test'
 });
 connection.connect();
 
 app.get('/', routes.index);
-app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
