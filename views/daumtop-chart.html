@@ -1,3 +1,4 @@
+<link rel='stylesheet' href='/stylesheets/style.css' />
 <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
@@ -5,7 +6,9 @@
 
 <h1>DaumTop PV</h1>
 <div id="pvchart" style="height: 300px;"></div>
-<h1>DaumTop Shopbox Click</h1>
+<h1>DaumTop UV</h1>
+<div id="uvchart" style="height: 300px;"></div>
+<h1>DaumTop Shoppingbox Click</h1>
 <div id="clickchart" style="height: 300px;"></div>
 
 <script>
@@ -19,6 +22,18 @@ new Morris.Line({
   xkey: 'day',
   ykeys: ['pc', 'mobile'],
   labels: ['pc PV', 'mobile PV']
+});
+
+new Morris.Line({
+  element: 'uvchart',
+  data: [
+    <% for(var i=0; i< results.length; i++) { %>
+    <% if(i > 0) { %>,<% } %>{ day : '<%= results[i].yyyymmdd %>', pc: <%= results[i].uv %>, mobile: <%= results[i].m_uv %> }
+    <% } %>
+  ],
+  xkey: 'day',
+  ykeys: ['pc', 'mobile'],
+  labels: ['pc UV', 'mobile UV']
 });
 
 new Morris.Line({

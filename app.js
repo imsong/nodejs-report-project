@@ -38,6 +38,8 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/daumtop', chart.daumtop);
+app.get('/natetop', chart.natetop);
+app.get('/shophow', chart.shophow);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
