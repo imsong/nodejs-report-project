@@ -6,6 +6,7 @@
 var express = require('express');
 var routes = require('./routes');
 var chart = require('./routes/chart');
+var demo = require('./routes/demo');
 var http = require('http');
 var path = require('path');
 var mysql = require('mysql');
@@ -40,6 +41,7 @@ app.get('/', routes.index);
 app.get('/daumtop', chart.daumtop);
 app.get('/natetop', chart.natetop);
 app.get('/shophow', chart.shophow);
+app.get('/demo', demo.pc);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
