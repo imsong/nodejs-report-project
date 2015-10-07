@@ -50,14 +50,10 @@ exports.natetop = function(req, res){
 	"from ( \n"+
 	"		select yyyymmdd, service_unit, service_unit_layer, click \n"+
 	"		from SR_S_SHOPBOX_DAILY \n"+
-	"		WHERE service_unit = 'NATE' \n"+
-	"		and service_unit_layer = 'PC_TOP' \n"+
 	"	) a\n"+
 	"join (\n"+
 	"		select yyyymmdd, service_unit, service_unit_layer, click\n"+
 	"		from SR_S_SHOPBOX_DAILY\n"+
-	"		WHERE service_unit = 'NATE'\n"+
-	"		and service_unit_layer = 'M_TOP'\n"+
 	"	) b\n"+
 	"on a.yyyymmdd = b.yyyymmdd\n"+
 	"where a.service_unit = b.service_unit";
@@ -86,14 +82,10 @@ exports.shophow = function(req, res){
     "from ( \n"+
     "       select yyyymmdd, service_unit, service_unit_layer, pv, uv \n"+
     "       from SR_S_SHOPHOW_DAILY \n"+
-    "       WHERE service_unit = 'SHOPHOW' \n"+
-    "       and service_unit_layer = 'PC' \n"+
     "   ) a\n"+
     "join (\n"+
     "       select yyyymmdd, service_unit, service_unit_layer, pv, uv\n"+
     "       from SR_S_SHOPHOW_DAILY\n"+
-    "       WHERE service_unit = 'SHOPHOW'\n"+
-    "       and service_unit_layer = 'MOBILE'\n"+
     "   ) b\n"+
     "on a.yyyymmdd = b.yyyymmdd\n"+
     "where a.service_unit = b.service_unit";
